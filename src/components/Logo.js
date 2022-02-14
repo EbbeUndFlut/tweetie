@@ -3,7 +3,7 @@ import React from 'react';
 const Logo = () => {
     return (
         <>
-            <img src="./img/tweetieLogo.png" alt="Logo" />
+            <img className="logoStart" src="./img/mainLogo.png" alt="Logo" />
         </>
     );
 }

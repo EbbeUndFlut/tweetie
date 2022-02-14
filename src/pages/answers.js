@@ -1,3 +1,5 @@
+// wird vermutlich nicht benötigt
+
 import React from 'react';
 
 const Answers = () => {

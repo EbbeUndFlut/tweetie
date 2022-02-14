@@ -1,5 +1,5 @@
 // SCSS styles
-import './App.css';
+import './App.scss';
 
 // Routing 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/startLogin.js';
 import Registration from './pages/startRegistration.js';
 import Home from './pages/home.js';
-import Search from './pages/search.js';
+import Search from './pages/searchPage.js';
 import Favorites from './pages/favorites.js';
 import Answers from './pages/answers.js';
 // components

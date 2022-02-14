@@ -1,8 +1,15 @@
 import React from 'react';
+import AddComment from '../components/AddComment.js';
+import CommentItems from '../components/CommentItems.js';
+
 
 const Home = () => {
     return (  
-        <h1>hallo</h1>
+        <section>
+            <AddComment/>
+            <CommentItems/>
+        </section>
+        
     );
 }
  

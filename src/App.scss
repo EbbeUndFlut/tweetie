@@ -1,0 +1,148 @@
+// ===== General Style =====
+
+// Imports
+@import "./scss/mixins.scss";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background-color: rgba(0,101,176,0.8);
+}
+
+.App {
+  width: 414px; 
+  margin: 2vh auto; 
+  border-radius: 4px;
+  background-color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+input {
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  border: 2px solid rgba(0,101,176,0.3); 
+}
+
+.blueButton {
+  background-color: rgb(0,101,176);
+  color: white; 
+}
+
+.greyFont {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: grey; 
+}
+
+// ===== Login & Registration Style =====
+.logoStart {
+  display: block; 
+  margin: 0 auto;
+  width: 50%;  
+  padding: 10vh 0 5vh 0; 
+}
+
+.start {
+  padding: 20px 30px; 
+  h1 {
+    font-size: 3rem;
+    margin: 5vh 0; 
+  }
+  form {
+    text-align: center;
+    margin-bottom: 10vh;
+    input {
+      width: 90%;
+      margin: 10px auto; 
+      display: block;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ===== Header Nav Style =====
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 20px 30px; 
+}
+
+// ===== Add Comment Style =====
+.addComment {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px; 
+  input:nth-of-type(1) { 
+    width: 60%; 
+  }
+  input:nth-of-type(2) { 
+    width: 35%; 
+  }
+}
+
+// ===== Add Comment Style =====
+.search {
+  padding: 10px 30px; 
+  input {
+    width: 100%; 
+    background-color: rgba(126, 131, 134, 0.2); 
+  }
+}
+
+// ===== Comment Style =====
+.comment {
+  margin-top: 20px; 
+  border-top: 1px solid rgba(0,101,176,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: top; 
+  padding: 20px 35px; 
+  img {
+    border-radius: 50%;
+    width: 60px; 
+  }
+  .commentContent {
+    margin-left: 10px; 
+    p {
+      margin: 8px 0; 
+    }
+  }
+  .counterIcons {
+    display: flex;
+    align-items: center; 
+    .counterP {
+      margin: 0 20px 0 5px; 
+    }
+  } 
+}
+
+
+
+
+// ===== Footer Style =====
+footer {
+  border-top: 1px solid rgba(0,101,176,0.3);
+  text-align: center;
+  padding: 20px 0; 
+  font-size: 40px;
+  a {
+    margin: 0 40px; 
+  }
+}

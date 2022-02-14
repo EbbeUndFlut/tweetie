@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
-        <nav>
+        <header>
             <h1>Home</h1>
-            <img src="./img/tweetieLogo.png" alt="logo" />
-        </nav>
+            <Link to='/home'><img src="./img/tweetieLogo.png" alt="logo" /></Link>
+        </header>
     );
 }
 

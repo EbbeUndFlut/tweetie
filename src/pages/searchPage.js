@@ -2,7 +2,8 @@ import React from 'react';
 import Search from '../components/Search.js';
 import CommentItems from '../components/CommentItems.js';
 
-const Favorites = () => {
+
+const SearchPage = () => {
     return (  
         <section>
             <Search/>
@@ -11,4 +12,4 @@ const Favorites = () => {
     );
 }
  
-export default Favorites;
+export default SearchPage;
