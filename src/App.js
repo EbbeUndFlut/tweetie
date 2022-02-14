@@ -1,7 +1,10 @@
+// SCSS styles
 import './App.css';
+
+// Routing 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// component & pages import
+// pages & components import 
 // pages
 import Login from './pages/startLogin.js';
 import Registration from './pages/startRegistration.js';
@@ -12,23 +15,21 @@ import Answers from './pages/answers.js';
 // components
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
+import Logo from './components/Logo.js';
 
-
-
+// Routing
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header/>
         <Routes>
-          <Route path="/" element={<Login/>}/>
-          <Route path="/registration" element={<Registration/>}/>
-          <Route path="/home" element={<Home/>}/>
-          <Route path="/search" element={<Search/>}/>
-          <Route path="/favorites" element={<Favorites/>}/>
-          <Route path="/answers" element={<Answers/>}/>
-        </Routes>
-        <Footer/>
+          <Route exact path="/" element={<><Logo/><Login/></>}/>
+          <Route path="/registration" element={<><Logo/><Registration/></>}/>
+          <Route path="/home" element={<><Header/><Home/><Footer/></>}/>
+          <Route path="/search" element={<><Header/><Search/><Footer/></>}/>
+          <Route path="/favorites" element={<><Header/><Favorites/><Footer/></>}/>
+          <Route path="/answers" element={<><Header/><Answers/><Footer/></>}/>
+        </Routes> 
       </Router>
     </div>
   );
