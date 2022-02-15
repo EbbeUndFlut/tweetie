@@ -1,9 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
+import { Link } from "react-router-dom";
 import { FaComment } from "react-icons/fa";
 
 const CommentCounter = () => {
+    const [count, setCount] = useState(0);
+    
     return (  
-        <><FaComment/><p className="counterP">Counter</p></>
+        <Link onClick={() => setCount(count + 1)} to="#" to="#"><FaComment/><p className="counterP">{count}</p></Link>
     );
 }
  
