@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const CommentItems = () => {
     return (
-        <section>
+        <section className="commentItems">
             {
                 data.map(elt =>
                     <CommentDetails
