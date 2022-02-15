@@ -25,9 +25,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<><Logo/><Login/></>}/>
           <Route path="/registration" element={<><Logo/><Registration/></>}/>
-          <Route path="/home" element={<><Header/><Home/><Footer/></>}/>
-          <Route path="/search" element={<><Header/><Search/><Footer/></>}/>
-          <Route path="/favorites" element={<><Header/><Favorites/><Footer/></>}/>
+          <Route path="/home" element={<><Header title="Home"/><Home/><Footer/></>}/>
+          <Route path="/search" element={<><Header title="Suche"/><Search/><Footer/></>}/>
+          <Route path="/favorites" element={<><Header title="Favoriten"/><Favorites/><Footer/></>}/>
           <Route path="/answers" element={<><Header/><Answers/><Footer/></>}/>
         </Routes> 
       </Router>
