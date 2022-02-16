@@ -30,10 +30,11 @@ h1 {
   font-weight: 500;
 }
 
-input {
+input, .loginButton {
   padding: 10px 15px; 
   border-radius: 5px; 
   border: 2px solid rgba(0,101,176,0.3); 
+  text-decoration: none;
 }
 
 .blueButton {
@@ -64,7 +65,7 @@ input {
   form {
     text-align: center;
     margin-bottom: 10vh;
-    input {
+    input, .loginButton {
       width: 100%;
       margin: 10px auto; 
       display: block;
@@ -130,14 +131,21 @@ header {
       margin: 8px 0; 
     }
   }
-  .counterIcons {
+}
+
+// Like and comment counter
+.counterIcons {
+  display: flex;
+  align-items: center; 
+  a {
     display: flex;
     align-items: center; 
     .counterP {
       margin: 0 20px 0 5px; 
     }
-  } 
-}
+  }
+  
+} 
 
 
 
