@@ -12,7 +12,7 @@ const Registration = () => {
                 <input onChange={(e) => RegisterFunction.setPassword(e.target.value)} type="password" name="password" id="password" placeholder="Passwort" />
                 <input onChange={(e) => RegisterFunction.setPasswordConfirmation(e.target.value)} type="password" name="password" id="password" placeholder="Passwort Bestätigung" />
                 <input onChange={(e) => RegisterFunction.setFile(e.target.value)} type="file" name="image" id="image" placeholder="Bild auswählen" />
-                <Link onClick={RegisterFunction.triggerLogin} className="blueButton loginButton" to="/home">Anmelden</Link>
+                <Link onClick={RegisterFunction.triggerRegister} className="blueButton loginButton" to="/home">Anmelden</Link>
                 <Link className="greyFont" to="/">Hast du bereits ein Konto? Hier anmelden.</Link>
             </form>
         </section>

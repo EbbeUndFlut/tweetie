@@ -32,7 +32,7 @@ const RegisterFunction = () => {
         return result
     }
 
-    const triggerLogin = (event) => {
+    const triggerRegister = (event) => {
         event.preventDefault()
         // check for data
         const hasData = email.length > 0 && password.length > 0
