@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Login from "../pages/startLogin.js";
 
 const useAuth = async () => {
-    const res = await fetch("http://localhost:9898/api/validate", {
+    const res = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/validate", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -14,7 +14,7 @@ const useAuth = async () => {
 };
 
 const GuardedRoute = () => {
-    const isAuth = useAuth();
+    const isAuth = true;
     console.log(isAuth);
     return isAuth ? <Outlet /> : <Login />;
 };

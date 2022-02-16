@@ -17,6 +17,7 @@ import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import Logo from './components/Logo.js';
 import GetId from './components/GetId.js';
+import GuardedRoute from './components/GuardedRoute.js';
 
 // import hooks for login 
 import React, { useState } from 'react';
@@ -31,10 +32,12 @@ function App() {
         <Routes>
           <Route exact path="/" element={<><Logo /><Login /></>} />
           <Route exact path="/registration" element={<><Logo /><Registration /></>} />
-          <Route path="/home" element={<><Header title="Home" /><Home /><Footer /></>} />
-          <Route path="/home/:id" element={<><Header title="Home" /><GetId /><Footer /></>} />
-          <Route path="/search" element={<><Header title="Suche" /><Search /><Footer /></>} />
-          <Route path="/favorites" element={<><Header title="Favoriten" /><Favorites /><Footer /></>} />
+          <Route element={<GuardedRoute />}>
+            <Route path="/home" element={<><Header title="Home" /><Home /><Footer /></>} />
+            <Route path="/home/:id" element={<><Header title="Home" /><GetId /><Footer /></>} />
+            <Route path="/search" element={<><Header title="Suche" /><Search /><Footer /></>} />
+            <Route path="/favorites" element={<><Header title="Favoriten" /><Favorites /><Footer /></>} />
+          </Route>
           <Route path="/answers" element={<><Header /><Answers /><Footer /></>} />
         </Routes>
       </Router>
