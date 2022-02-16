@@ -1,14 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import data from '../data/data';
 // import { useEffect, useState } from 'react'
 
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ProtectedRoute from "react-protected-route-component";
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
 
     async function postData(url, data) {
         // Default options are marked with *
@@ -20,7 +19,9 @@ const Login = () => {
             },
             body: JSON.stringify(data) // body data type must match "Content-Type" header
         });
-        return response.json(); // parses JSON response into native JavaScript objects
+        let myResponse = await response.json()
+        myResponse.status = response.status
+        return myResponse; 
     }
 
     async function postLoginUser({ email, password }) {
@@ -43,7 +44,10 @@ const Login = () => {
         } */
         // trigger the login
         postLoginUser({ email, password })
-            .then(({ err, token }) => {
+            .then((data) => {
+                if (data.status === 200) {
+                    navigate("/home")
+                }
                 /*                 if (err) {
                                     setFormFeedback({
                                         status: "error",
@@ -56,7 +60,6 @@ const Login = () => {
                 // reset state...
                 setEmail("")
                 setPassword("")
-                console.log(token)
                 // setFormFeedback(null)
             })
     }
@@ -69,7 +72,7 @@ const Login = () => {
                 <input onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" placeholder="E-Mail" />
                 <input onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="password" placeholder="Passwort" />
                 {/* <input onClick={triggerLogin} className="blueButton" type="button" value="Anmelden" /> */}
-                <Link /* onClick={triggerLogin} */ className="blueButton loginButton" to="/home">Anmelden</Link>
+                <Link onClick={triggerLogin} className="blueButton loginButton" to="/home">Anmelden</Link>
                 <Link className="greyFont" to="/registration">Noch kein Konto? Hier registrieren.</Link>
             </form>
         </section>

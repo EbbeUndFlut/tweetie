@@ -19,12 +19,9 @@ import Logo from './components/Logo.js';
 import GetId from './components/GetId.js';
 import GuardedRoute from './components/GuardedRoute.js';
 
-// import hooks for login 
-import React, { useState } from 'react';
 
 // Routing
 function App() {
-
 
   return (
     <div className="App">
