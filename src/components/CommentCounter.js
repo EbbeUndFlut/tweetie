@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FaComment } from "react-icons/fa";
 
-const CommentCounter = () => {
+const CommentCounter = (props) => {
     const [count, setCount] = useState(0);
     
     return (  
-        <Link onClick={() => setCount(count + 1)} to="#" to="#"><FaComment/><p className="counterP">{count}</p></Link>
+        <Link onClick={() => setCount(count + 1)} to={`/postComment/${props.id}`}><FaComment/><p className="counterP">{count}</p></Link>
     );
 }
  
