@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginFunction = () => {
@@ -19,16 +19,16 @@ const LoginFunction = () => {
         });
         let myResponse = await response.json()
         myResponse.status = response.status
-        return myResponse; 
+        return myResponse;
     }
-    
+
     async function postLoginUser({ email, password }) {
         const url = process.env.REACT_APP_BACKEND_URL + "/api/users/login"
         const body = { email, password }
         const result = await postData(url, body)
         return result
     }
-    
+
     const triggerLogin = (event) => {
         event.preventDefault()
         // check for data
@@ -62,11 +62,11 @@ const LoginFunction = () => {
             })
     }
 
-    return (  
+    return (
         <></>
     );
 }
- 
+
 export default LoginFunction;
 
 
