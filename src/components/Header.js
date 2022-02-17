@@ -27,7 +27,7 @@ const Header = (props) => {
 		<header>
 			<Link to='/home'><img src="./img/tweetieLogo.png" alt="logo" /></Link>
 			<h1>{props.title}</h1>
-			<FaPowerOff onClick={logoutTrigger} />
+			<FaPowerOff style={{cursor: 'pointer'}} onClick={logoutTrigger} />
 		</header>
 	);
 }
