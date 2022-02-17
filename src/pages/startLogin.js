@@ -35,7 +35,6 @@ const Login = () => {
         event.preventDefault()
         // check for data
         const hasData = email.length > 0 && password.length > 0
-        console.log(hasData)
         if (!hasData) {
             setFormFeedback({
                 status: "error",
@@ -47,7 +46,6 @@ const Login = () => {
         // trigger the login
         postLoginUser({ email, password })
             .then((data, err) => {
-                console.log(data)
                 if (data.status === 200) {
                     navigate("/home")
                 }
