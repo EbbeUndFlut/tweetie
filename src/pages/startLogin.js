@@ -3,9 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import FormFeedback from "../components/FormFeedback.js";
 
 const Login = () => {
+	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const navigate = useNavigate();
 	const [formFeedback, setFormFeedback] = useState(null);
 
 	async function postData(url, data) {
@@ -19,6 +19,7 @@ const Login = () => {
 			},
 			body: JSON.stringify(data), // body data type must match "Content-Type" header
 		});
+		console.log(url)
 		let myResponse = await response.json();
 		myResponse.status = response.status;
 		return myResponse;

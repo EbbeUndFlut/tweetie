@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
@@ -59,7 +59,6 @@ input, .loginButton {
 .start {
   padding: 20px 30px; 
   h1 {
-    font-size: 2.5rem;
     margin: 5vh 0; 
   }
   form {
@@ -82,8 +81,10 @@ input, .loginButton {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: baseline; 
   padding: 20px 30px; 
+  font-size: 25px;
+  color: rgb(0,101,176);
 }
 
 // ===== Add Comment Style =====
