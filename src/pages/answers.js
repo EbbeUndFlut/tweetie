@@ -1,10 +1,10 @@
-// wird vermutlich nicht benötigt
+import CommentItems from '../components/CommentItems.js';
 
 import React from 'react';
 
 const Answers = () => {
     return (
-        <h1>hallo</h1>
+        <CommentItems/>
     );
 }
 

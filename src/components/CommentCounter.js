@@ -5,10 +5,10 @@ import { FaComment } from "react-icons/fa";
 
 const CommentCounter = (props) => {
     const [count, setCount] = useState(0);
-    
-    return (  
-        <Link onClick={() => setCount(count + 1)} to={`/postComment/${props.id}`}><FaComment/><p className="counterP">{count}</p></Link>
+
+    return (
+        <Link onClick={() => setCount(count + 1)} to={`/home/${props._id}`}><FaComment /><p className="counterP">{count}</p></Link>
     );
 }
- 
+
 export default CommentCounter;

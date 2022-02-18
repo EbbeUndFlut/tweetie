@@ -35,7 +35,7 @@ function App() {
             <Route path="/search" element={<><Header title="Suche" /><Search /><Footer /></>} />
             <Route path="/favorites" element={<><Header title="Favoriten" /><Favorites /><Footer /></>} />
           </Route>
-          <Route path="/answers" element={<><Header /><Answers /><Footer /></>} />
+          <Route path="/answers" element={<><Header title="Kommentiere"/><Answers /><Footer /></>} />
         </Routes>
       </Router>
     </div>
