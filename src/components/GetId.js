@@ -1,8 +1,6 @@
 import React from 'react';
 import {useParams} from 'react-router-dom';
 import CommentDetails from './CommentDetails.js';
-import Data from '../data/data.js';
-
 
 
 const GetId = () => {
@@ -11,7 +9,7 @@ const GetId = () => {
 
     return (  
         <CommentDetails
-        id={id}
+        _id={id}
         />
     );
 }

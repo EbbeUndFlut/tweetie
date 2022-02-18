@@ -29,11 +29,23 @@ const CommentItems = () => {
     }
     return (
         <section className="commentItems">
+<<<<<<< Updated upstream
             {post
                 ? checker()
                 : posts.map((elt) => (
                       <CommentDetails key={uuidv4()} img={elt.img} username={elt.creator.name} time={elt.date} thefunc={comment} comment={elt.text} _id={elt._id} />
                   ))}
+=======
+            {posts.map((elt) => (
+                <CommentDetails
+                    key={uuidv4()}
+                    img={elt.img}
+                    username={elt.creator.name}
+                    time={elt.date}
+                    comment={elt.text}
+                    _id={elt._id} />
+            ))}
+>>>>>>> Stashed changes
         </section>
     )
 }
