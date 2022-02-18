@@ -10,12 +10,14 @@ const CommentItems = () => {
             credentials: "include",
         })
             .then((res) => res.json())
-            .then((data) => setPosts(data))
+            .then((data) =>{
+		    console.log(data)
+		    setPosts(data)})
     }, [])
     return (
         <section className="commentItems">
             {posts.map((elt) => (
-                <CommentDetails key={uuidv4()} img={elt.img} username={elt.creator} time={elt.date} comment={elt.text} id={elt.id} />
+                <CommentDetails key={uuidv4()} img={elt.img} username={elt.creator.name} time={elt.date} comment={elt.text} id={elt.id} />
             ))}
         </section>
     )

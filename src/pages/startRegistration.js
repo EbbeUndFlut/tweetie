@@ -1,34 +1,57 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import S3FileUpload from "react-s3";
 
 const Registration = () => {
+	const bucketConfig = {
+		bucketName: "tweetiebucket",
+		region: "eu-central-1",
+		accessKeyId: "AKIAQOTBFH6HATM5NK56",
+		secretAccessKey: "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",
+	};
 	const [name, setName] = useState("");
 	const [mail, setMail] = useState("");
 	const [pass, setPass] = useState("");
 	const [passConfirm, setPassConfirm] = useState("");
 	const [pic, setPic] = useState(null);
+	const [picUrl, setPicUrl] = useState("");
 	const navigate = useNavigate();
-
+window.Buffer = window.Buffer || require("buffer").Buffer;
 	const register = () => {
 		console.log("in register");
-		let formData = new FormData();
-		formData.append("name", name);
-		formData.append("email", mail);
-		formData.append("password", pass);
-		formData.append("avatar", pic, pic.name);
-
-		const result = fetch(
-			process.env.REACT_APP_BACKEND_URL + "/api/users",
-			{
-				method: "POST",
-				credentials: "include",
-				body: formData,
+		const imgUpload = async () => {
+			try{
+			const data = await S3FileUpload.uploadFile(
+				pic,
+				bucketConfig
+			);
+			console.log(data.location);
+			setPicUrl(data.location);
+			} catch (err){
+				console.log(err.message)
 			}
-		).then((res) => {
-			if (res.status === 201) {
-				navigate("/home");
-			}
-		});
+		};
+		imgUpload()
+			/*.then(() => {
+			let formData = new FormData();
+			formData.append("name", name);
+			formData.append("email", mail);
+			formData.append("password", pass);
+			formData.append("avatar", pic, pic.name);
+			const result = fetch(
+				process.env.REACT_APP_BACKEND_URL +
+					"/api/users",
+				{
+					method: "POST",
+					credentials: "include",
+					body: formData,
+				}
+			).then((res) => {
+				if (res.status === 201) {
+					navigate("/home");
+				}
+			});
+		});*/
 	};
 
 	return (
