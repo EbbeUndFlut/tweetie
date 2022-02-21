@@ -1,17 +1,16 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
-import CommentDetails from './CommentDetails.js';
-
+import { useParams } from 'react-router-dom';
+import Answers from '../pages/answers.js';
 
 const GetId = () => {
-    let {id} = useParams();
+    let { id } = useParams();
     console.log(id)
 
-    return (  
-        <CommentDetails
-        _id={id}
+    return (
+        <Answers
+            _id={id}
         />
     );
 }
- 
+
 export default GetId;

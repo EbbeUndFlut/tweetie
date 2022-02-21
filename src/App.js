@@ -31,11 +31,11 @@ function App() {
           <Route exact path="/registration" element={<><Logo /><Registration /></>} />
           <Route element={<GuardedRoute />}>
             <Route path="/home" element={<><Header title="Home" /><Home /><Footer /></>} />
-            <Route path="/home/:id" element={<><Header title="Home" /><GetId /><Footer /></>} />
             <Route path="/search" element={<><Header title="Suche" /><Search /><Footer /></>} />
             <Route path="/favorites" element={<><Header title="Favoriten" /><Favorites /><Footer /></>} />
+            <Route path="/answers" element={<><Header title="Antworten" /><Answers /><Footer /></>} />
+            <Route path="/answers/:id" element={<><Header title="Antworten" /><GetId /><Footer /></>} />
           </Route>
-          <Route path="/answers" element={<><Header title="Kommentiere"/><Answers /><Footer /></>} />
         </Routes>
       </Router>
     </div>
