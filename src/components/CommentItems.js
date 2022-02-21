@@ -24,7 +24,7 @@ const CommentItems = () => {
         if (post) {
             const item = posts.filter((item) => item._id == post)[0]
             console.log("DAS ITEM: ", item)
-            return <CommentDetails key={uuidv4()} img={item.img} username={item.creator.name} time={item.date} thefunc={comment} comment={item.text} _id={item._id} />
+            return <CommentDetails key={uuidv4()} img={item.elt.creator.profilepic} username={item.creator.name} time={item.date} thefunc={comment} comment={item.text} _id={item._id} />
         }
     }
     return (
@@ -32,7 +32,7 @@ const CommentItems = () => {
             {post
                 ? checker()
                 : posts.map((elt) => (
-                      <CommentDetails key={uuidv4()} img={elt.img} username={elt.creator.name} time={elt.date} thefunc={comment} comment={elt.text} _id={elt._id} />
+                      <CommentDetails key={uuidv4()} img={elt.creator.profilepic} username={elt.creator.name} time={elt.date} thefunc={comment} comment={elt.text} _id={elt._id} />
                   ))}
         </section>
     )
