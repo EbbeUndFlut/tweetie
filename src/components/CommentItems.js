@@ -1,7 +1,6 @@
+import { v4 as uuidv4 } from "uuid"
 import { useEffect, useState } from "react"
 import CommentDetails from "./CommentDetails.js"
-import data from "../data/data.js"
-import { v4 as uuidv4 } from "uuid"
 
 const CommentItems = () => {
     const [posts, setPosts] = useState([])
@@ -24,7 +23,17 @@ const CommentItems = () => {
         if (post) {
             const item = posts.filter((item) => item._id == post)[0]
             console.log("DAS ITEM: ", item)
-            return <CommentDetails key={uuidv4()} img={item.elt.creator.profilepic} username={item.creator.name} time={item.date} thefunc={comment} comment={item.text} _id={item._id} />
+            return (
+                <CommentDetails
+                    key={uuidv4()}
+                    img={item.elt.creator.profilepic}
+                    username={item.creator.name}
+                    time={item.date}
+                    thefunc={comment}
+                    comment={item.text}
+                    _id={item._id}
+                />
+            )
         }
     }
     return (
