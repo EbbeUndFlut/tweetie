@@ -35,16 +35,15 @@ const Search = () => {
     }, []); // kommt hier in die [] noch was rein? 
 
     return (
-        <form className="search">
-            <input
-                onChange={(event) => handleSearch(event)}
-                type="text"
-                name="search"
-                id="search"
-                placeholder="🔍 Wonach möchtest du suchen?" />
-
-
-
+        <>
+            <form className="search">
+                <input
+                    onChange={(event) => handleSearch(event)}
+                    type="text"
+                    name="search"
+                    id="search"
+                    placeholder="🔍 Wonach möchtest du suchen?" />
+            </form>
             <section className="searchResults">
                 {filteredData.map((elt) => {
                     <CommentDetails
@@ -60,9 +59,9 @@ const Search = () => {
             </section>
 
 
+        </>
 
 
-        </form>
     );
 }
 
