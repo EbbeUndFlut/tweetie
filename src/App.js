@@ -16,20 +16,27 @@ import Answers from './pages/answers.js';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import Logo from './components/Logo.js';
+import GetId from './components/GetId.js';
+import GuardedRoute from './components/GuardedRoute.js';
+
 
 // Routing
 function App() {
+
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/" element={<><Logo/><Login/></>}/>
-          <Route path="/registration" element={<><Logo/><Registration/></>}/>
-          <Route path="/home" element={<><Header/><Home/><Footer/></>}/>
-          <Route path="/search" element={<><Header/><Search/><Footer/></>}/>
-          <Route path="/favorites" element={<><Header/><Favorites/><Footer/></>}/>
-          <Route path="/answers" element={<><Header/><Answers/><Footer/></>}/>
-        </Routes> 
+          <Route exact path="/" element={<><Logo /><Login /></>} />
+          <Route exact path="/registration" element={<><Logo /><Registration /></>} />
+          <Route element={<GuardedRoute />}>
+            <Route path="/home" element={<><Header title="Home" /><Home /><Footer /></>} />
+            <Route path="/search" element={<><Header title="Suche" /><Search /><Footer /></>} />
+            <Route path="/favorites" element={<><Header title="Favoriten" /><Favorites /><Footer /></>} />
+            <Route path="/answers" element={<><Header title="Antworten" /><Answers /><Footer /></>} />
+            <Route path="/answers/:id" element={<><Header title="Antworten" /><GetId /><Footer /></>} />
+          </Route>
+        </Routes>
       </Router>
     </div>
   );

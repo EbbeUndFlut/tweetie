@@ -15,24 +15,33 @@
 
 body {
   background-color: rgba(0,101,176,0.8);
+  background-image: url(./img/sky.jpg);
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App {
   width: 414px; 
-  margin: 2vh auto; 
-  border-radius: 4px;
-  background-color: white;
+  margin: 0 auto; 
+  border-radius: 10px;
+  background-color: hsla(0,0%,100%,0.3);
+  border: 10px solid hsla(0,0%,100%,0.5);
+  background-clip: padding-box;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
-input {
+input, .loginButton {
   padding: 10px 15px; 
   border-radius: 5px; 
   border: 2px solid rgba(0,101,176,0.3); 
+  text-decoration: none;
 }
 
 .blueButton {
@@ -47,24 +56,29 @@ input {
 }
 
 // ===== Login & Registration Style =====
+@keyframes bounce {
+  60%, 80%, to {transform: translateY(350px)};
+  70% {transform: translateY(250px)};
+  90% {transform: translateY(300px)}
+}
 .logoStart {
   display: block; 
   margin: 0 auto;
   width: 50%;  
   padding: 10vh 0 5vh 0; 
+  animation: bounce 3s; 
 }
 
 .start {
   padding: 20px 30px; 
   h1 {
-    font-size: 3rem;
     margin: 5vh 0; 
   }
   form {
     text-align: center;
     margin-bottom: 10vh;
-    input {
-      width: 90%;
+    input, .loginButton {
+      width: 100%;
       margin: 10px auto; 
       display: block;
     }
@@ -80,8 +94,10 @@ input {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: baseline; 
   padding: 20px 30px; 
+  font-size: 25px;
+  color: rgb(0,101,176);
 }
 
 // ===== Add Comment Style =====
@@ -107,6 +123,11 @@ header {
 }
 
 // ===== Comment Style =====
+.commentItems {
+  height: 550px; 
+  overflow: auto;
+}
+
 .comment {
   margin-top: 20px; 
   border-top: 1px solid rgba(0,101,176,0.3);
@@ -115,8 +136,8 @@ header {
   align-items: top; 
   padding: 20px 35px; 
   img {
+    // width: 30%;
     border-radius: 50%;
-    width: 60px; 
   }
   .commentContent {
     margin-left: 10px; 
@@ -124,14 +145,21 @@ header {
       margin: 8px 0; 
     }
   }
-  .counterIcons {
+}
+
+// Like and comment counter
+.counterIcons {
+  display: flex;
+  align-items: center; 
+  a {
     display: flex;
     align-items: center; 
     .counterP {
       margin: 0 20px 0 5px; 
     }
-  } 
-}
+  }
+  
+} 
 
 
 
