@@ -25,9 +25,11 @@ const Header = (props) => {
 
 	return (
 		<header>
-			<Link to='/home'><img src="./img/tweetieLogo.png" alt="logo" /></Link>
-			<h1>{props.title}</h1>
-			<FaPowerOff style={{cursor: 'pointer'}} onClick={logoutTrigger} />
+			<section>
+				<Link to='/home'><img src="./img/tweetieLogo.png" alt="logo" /></Link>
+				<h1>{props.title}</h1>
+			</section>
+			<FaPowerOff style={{ cursor: 'pointer' }} onClick={logoutTrigger} />
 		</header>
 	);
 }
