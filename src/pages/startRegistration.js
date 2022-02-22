@@ -13,8 +13,8 @@ const Registration = () => {
 		console.log("in register");
 		const data = await fetch(
 			process.env.REACT_APP_BACKEND_URL +
-				"/api/users/signedurl?imgname=" +
-				pic.name,
+			"/api/users/signedurl?imgname=" +
+			pic.name,
 			{
 				method: "GET",
 			}
@@ -39,7 +39,7 @@ const Registration = () => {
 			console.log("check mal form:", url);
 			const result = await fetch(
 				process.env.REACT_APP_BACKEND_URL +
-					"/api/users",
+				"/api/users",
 				{
 					method: "POST",
 					credentials: "include",

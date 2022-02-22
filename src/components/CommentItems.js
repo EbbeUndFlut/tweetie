@@ -41,8 +41,8 @@ const CommentItems = () => {
             {post
                 ? checker()
                 : posts.map((elt) => (
-                      <CommentDetails key={uuidv4()} img={elt.creator.profilepic} username={elt.creator.name} time={elt.date} thefunc={comment} comment={elt.text} _id={elt._id} />
-                  ))}
+                    <CommentDetails key={uuidv4()} img={elt.creator.profilepic} username={elt.creator.name} time={elt.date} thefunc={comment} comment={elt.text} _id={elt._id} />
+                )).sort((a, b) => a.time > b.time ? 1:-1)}
         </section>
     )
 }
