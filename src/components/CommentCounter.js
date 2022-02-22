@@ -11,11 +11,9 @@ const CommentCounter = (props) => {
         props.thefunc(props._id)
     }
     return (
-        <Link to={`/answers/${props._id}`} onClick={counterFunc}>
-            <div >
+        <Link className="counterP" to={`/answers/${props._id}`} onClick={counterFunc}>
                 <FaComment />
                 <p className="counterP">{count}</p>
-            </div>
         </Link>
 
     )
