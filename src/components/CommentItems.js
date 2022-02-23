@@ -15,34 +15,41 @@ const CommentItems = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
+                /* const newData = data.map(item => item.date = new Date(item.date).toLocaleDateString)
+                setPosts(newData) */
+
                 setPosts(data)
+
             })
     }, [post])
 
-    const checker = () => {
-        if (post) {
-            const item = posts.filter((item) => item._id == post)[0]
-            console.log("DAS ITEM: ", item)
-            return (
-                <CommentDetails
-                    key={uuidv4()}
-                    img={item.elt.creator.profilepic}
-                    username={item.creator.name}
-                    time={item.date}
-                    thefunc={comment}
-                    comment={item.text}
-                    _id={item._id}
-                />
-            )
-        }
-    }
+    
+
+    // Versuch das Datum zu bearbeiten. Bisher erfolglos. 
+    /* console.log(posts)
+    const str = posts[0].date
+    console.log(str) */
+    // const str = post[0].date
+    /* console.log(str)  */
+    /* const newStr = str.slice(0, -1)
+    console.log(newStr)
+    const date = new Date(str)
+    console.log(date) */
+
+
     return (
         <section className="commentItems">
-            {post
-                ? checker()
-                : posts.map((elt) => (
-                    <CommentDetails key={uuidv4()} img={elt.creator.profilepic} username={elt.creator.name} time={elt.date} thefunc={comment} comment={elt.text} _id={elt._id} />
-                )).sort((a, b) => a.time > b.time ? 1:-1)}
+            {posts.map((elt) => (
+                <CommentDetails
+                    key={uuidv4()}
+                    img={elt.creator.profilepic}
+                    username={elt.creator.name}
+                    time={elt.date}
+                    thefunc={comment}
+                    comment={elt.text}
+                    _id={elt._id} />
+            )).sort((a, b) => a.time > b.time ? 1 : -1)
+            }
         </section>
     )
 }
