@@ -112,10 +112,6 @@ const Registration = () => {
 					anmelden.
 				</Link>
 			</form>
-			<img
-				src="https://tweetie.s3.eu-central-1.amazonaws.com/random%20image%20name"
-				alt="hshsh"
-			/>
 		</section>
 	);
 };
