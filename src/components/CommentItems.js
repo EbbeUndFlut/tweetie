@@ -1,7 +1,9 @@
+// Komponente für Fetch aller Kommentare 
 import { v4 as uuidv4 } from "uuid"
+import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import CommentDetails from "./CommentDetails.js"
-import { Link } from "react-router-dom"
+
 
 const CommentItems = () => {
     const [posts, setPosts] = useState([])
@@ -9,6 +11,8 @@ const CommentItems = () => {
     const comment = (item) => {
         setPost(item)
     }
+
+    // Kommentar Fetch
     useEffect(() => {
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/posts", {
             credentials: "include",
@@ -20,14 +24,11 @@ const CommentItems = () => {
             })
     }, [post])
 
-    const str = posts.date
-    const date = new Date(str)
-    console.log(date.getDate())
-
     return (
         <section className="commentItems">
             {posts
                 .map((elt) => (
+                    // Link zur Anzeige von allen Antworten zu einzelnen Posts
                     <Link className="comment-link" to={`/conversationpage/${elt._id}`}>
                         <CommentDetails
                             key={uuidv4()}

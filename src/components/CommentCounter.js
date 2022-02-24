@@ -1,11 +1,10 @@
-import React from "react";
-import { useState, useEffect } from "react";
+// Kommponente für den Kommentarzähler
 import { Link } from "react-router-dom";
 import { FaComment } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 
 const CommentCounter = (props) => {
 	const [count, setCount] = useState(0);
-
 	useEffect(() => {
 		setCount(props.ccounter);
 	}, []);

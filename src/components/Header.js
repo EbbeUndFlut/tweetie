@@ -1,9 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom'
+// Komponente für den Header
 import { useEffect, useState } from 'react'
 import { FaPowerOff } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = (props) => {
-	const [user, setUser] = useState({})
+	const [user, setUser] = useState({}) // brauchen wir die Zeile??
 	const navigate = useNavigate();
 	useEffect(() => {
 		const result = fetch(process.env.REACT_APP_BACKEND_URL + '/api/users/currentuser', {

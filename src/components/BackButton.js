@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from "react-router-dom";
+// Komponente "zurück" Button
+import React, { useNavigate } from "react-router-dom";
 
 const BackButton = () => {
     const navigate = useNavigate();

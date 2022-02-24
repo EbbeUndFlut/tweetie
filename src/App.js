@@ -18,7 +18,7 @@ import Footer from './components/Footer.js';
 import Logo from './components/Logo.js';
 import GetId from './components/GetId.js';
 import GuardedRoute from './components/GuardedRoute.js';
-import ConversationPage from './pages/ConversationPage.js'
+import ConversationPage from './pages/conversationPage.js'
 
 // Routing
 function App() {

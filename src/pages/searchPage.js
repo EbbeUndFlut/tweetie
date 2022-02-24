@@ -1,4 +1,6 @@
+// Seite für Suche nach Freitext
 import { v4 as uuidv4 } from "uuid"
+import { Link } from "react-router-dom"
 import React, { useState } from "react";
 import Search from '../components/Search.js';
 import CommentDetails from '../components/CommentDetails.js';
@@ -14,8 +16,10 @@ const SearchPage = () => {
     return (  
         <section>
             <Search setData={setData}/>
-            <section className="searchResults">
+            <article className="searchResults">
                 {filteredData.map((elt) => 
+                // Link zur Anzeige von allen Antworten zu einzelnen Posts
+                <Link className="comment-link" to={`/conversationpage/${elt._id}`}>
                     <CommentDetails
                         key={uuidv4()}
                         img={elt.creator.profilepic}
@@ -23,9 +27,9 @@ const SearchPage = () => {
                         time={elt.date}
                         comment={elt.text}
                         _id={elt._id}
-                    />
-                )}
-            </section>
+                    /></Link>
+                ).sort((a, b) => (a.time > b.time ? 1 : -1))}
+            </article>
         </section>
     );
 }

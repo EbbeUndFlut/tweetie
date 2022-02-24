@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+// Komponente für Sucheingabe
+import React from "react";
 import { FaSearch } from "react-icons/fa";
-
 
 const Search = (props) => {
     
+    // Fetch zur Freitextsuche 
     const handleSearch = (event) => {
         event.preventDefault();
         let value = event.target.value.toLowerCase();

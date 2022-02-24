@@ -1,12 +1,12 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+// Komponente für Kommentarschablone
 import LikeCounter from './LikeCounter.js';
 import CommentCounter from './CommentCounter.js';
-
+import React, { useState, useEffect } from 'react';
 
 const CommentDetails = (props) => {
     const [time, setTime] = useState(null)
 
+    // Zeitangabe in den Posts
     useEffect(() => {
         const dateNow = new Date()
         console.log(dateNow)
@@ -16,8 +16,6 @@ const CommentDetails = (props) => {
         console.log(new Date(timeString).toLocaleString())
         setTime(new Date(timeString).toLocaleString())
     })
-
-
 
     return (
         <article className="comment">

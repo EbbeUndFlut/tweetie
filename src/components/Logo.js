@@ -1,3 +1,4 @@
+// Komponente für Login und Register Logo
 import React from 'react';
 
 const Logo = () => {

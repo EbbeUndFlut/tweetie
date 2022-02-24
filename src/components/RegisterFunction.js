@@ -1,6 +1,6 @@
+// Komponente für Register Funktion
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 
 const RegisterFunction = () => {
     const [username, setUsername] = useState("")

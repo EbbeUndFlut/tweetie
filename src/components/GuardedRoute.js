@@ -1,3 +1,4 @@
+// Komponente um Routen nur für eingeloggte User zugänglich zu machen
 import { Outlet } from "react-router-dom";
 import Login from "../pages/startLogin.js";
 

@@ -1,3 +1,5 @@
+
+// löschen? 
 import React from 'react';
 
 const postComment = () => {

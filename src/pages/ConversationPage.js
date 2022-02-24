@@ -1,8 +1,10 @@
+// Seite, die alle Antworten auf einzelne Posts anzeigt
 import { v4 as uuidv4 } from "uuid"
+import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import CommentDetails from "../components/CommentDetails.js"
 import BackButton from "../components/BackButton.js"
+import CommentDetails from "../components/CommentDetails.js"
 
 const ConversationPage = (props) => {
     const [post, setPost] = useState([])
@@ -12,6 +14,8 @@ const ConversationPage = (props) => {
     const [answers, setAnswers] = useState([])
     const [creator, setCreator] = useState([])
     let { id } = useParams()
+
+    // Fetch für Antworten auf einzelne Posts
     useEffect(() => {
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/posts/conversation/", {
             credentials: "include",
@@ -28,22 +32,35 @@ const ConversationPage = (props) => {
                 setCreator(item[0].boy[0])
             })
     }, [])
+    
     return (
         <section className="conversationPage">
-            <CommentDetails img={creator.profilepic} ccounter={post.comments} username={creator.name} time={post.date} thefunc={comment} comment={post.text} _id={post._id} />
+            {/* Link zur Anzeige von allen Antworten zu einzelnen Posts */}
+            <Link className="comment-link" to={`/conversationpage/${post._id}`}>
+                <CommentDetails
+                    img={creator.profilepic}
+                    ccounter={post.comments}
+                    username={creator.name}
+                    time={post.date}
+                    thefunc={comment}
+                    comment={post.text}
+                    _id={post._id} />
+            </Link>
             <div className="commentConversationAnswer">
                 {answers.map((elt) => (
-                    <CommentDetails
-                        key={uuidv4()}
-                        img={elt.creator.profilepic}
-                        ccounter={elt.comments}
-                        username={elt.creator.name}
-                        time={elt.date}
-                        thefunc={comment}
-                        comment={elt.text}
-                        _id={elt._id}
-                    />
-                ))}
+                    <Link className="comment-link" to={`/conversationpage/${elt._id}`}>
+                        <CommentDetails
+                            key={uuidv4()}
+                            img={elt.creator.profilepic}
+                            ccounter={elt.comments}
+                            username={elt.creator.name}
+                            time={elt.date}
+                            thefunc={comment}
+                            comment={elt.text}
+                            _id={elt._id}
+                        />
+                    </Link>
+                )).sort((a, b) => (a.time > b.time ? 1 : -1))}
             </div>
             <BackButton />
         </section>

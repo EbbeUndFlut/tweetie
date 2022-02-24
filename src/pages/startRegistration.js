@@ -1,3 +1,4 @@
+// Register Seite
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -9,6 +10,7 @@ const Registration = () => {
 	const [pic, setPic] = useState(null);
 	const [picUrl, setPicUrl] = useState("");
 	const navigate = useNavigate();
+
 	const register = async () => {
 		console.log("in register");
 		const data = await fetch(
@@ -52,11 +54,15 @@ const Registration = () => {
 		}
 	};
 
-	const [fileLabelText, setFileLabelText] = useState("Datei auswählen")
+	const [fileLabelText, setFileLabelText] = useState("Datei auswählen") // kann das weiter hoch? Zu den anderen Hooks?
 
 	return (
 		<section className="start">
-			<h1>Erstelle dein Konto bei Tweet<span className="fontColorOrange">i</span>e</h1>
+			<h1>
+				Erstelle dein Konto bei Tweet
+				<span className="fontColorOrange">i</span>
+				e
+			</h1>
 			<form>
 				<input
 					onChange={(e) =>
@@ -95,10 +101,12 @@ const Registration = () => {
 					placeholder="Passwort Bestätigung"
 				/>
 				<label htmlFor="image" name="image" className="upload-label">{fileLabelText}</label>
-				<input className="upload-button"
-					onChange={(e) =>
-						{setPic(e.target.files[0])
-						setFileLabelText("Ausgewählte Datei: " + e.target.files[0].name)}
+				<input
+					className="upload-button"
+					onChange={(e) => {
+						setPic(e.target.files[0])
+						setFileLabelText("Ausgewählte Datei: " + e.target.files[0].name)
+					}
 					}
 					type="file"
 					name="image"

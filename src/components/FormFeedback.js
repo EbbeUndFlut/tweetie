@@ -1,3 +1,4 @@
+// Komponente für Feedback aus Login und Registrierung
 import React from 'react';
 
 function FormFeedback(props) {

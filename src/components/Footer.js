@@ -1,3 +1,4 @@
+// Komponente Footer
 import React from 'react';
 import { FaHouseUser, FaSearch, FaHeart } from "react-icons/fa";
 import { NavLink } from 'react-router-dom'
@@ -7,13 +8,19 @@ const Footer = () => {
         <footer>
             <NavLink to="/home" style={({ isActive }) => ({
                 color: isActive ? '#0071BC' : "rgba(0, 113, 188, 0.2)",
-            })}><FaHouseUser/></NavLink>
+            })}>
+                <FaHouseUser />
+            </NavLink>
             <NavLink to="/search" style={({ isActive }) => ({
                 color: isActive ? '#0071BC' : "rgba(0, 113, 188, 0.2)",
-            })}><FaSearch/></NavLink>
+            })}>
+                <FaSearch />
+            </NavLink>
             <NavLink to="/favorites" style={({ isActive }) => ({
                 color: isActive ? '#0071BC' : "rgba(0, 113, 188, 0.2)",
-            })}><FaHeart/></NavLink>
+            })}>
+                <FaHeart />
+            </NavLink>
         </footer>
     );
 }

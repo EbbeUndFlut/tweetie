@@ -1,13 +1,11 @@
+// Komponenten für den Logintrigger
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 
 const LoginFunction = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
-
-    console.log("hallo")
 
     async function postData(url, data) {
         // Default options are marked with *
