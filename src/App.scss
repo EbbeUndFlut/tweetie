@@ -228,12 +228,11 @@ header {
 // ===== Search Style =====
 .search {
   padding: 0px 10px;
-  margin: 10px 30px 30px 30px;
+  margin: 10px 30px 15px 30px;
   background-color: rgb(178,208,231);
   display:flex;
   align-items: center;
   border-radius: 5px;
-
 
 }
 
@@ -250,6 +249,10 @@ header {
   outline: none;
   border: none;
   width: 100%;
+}
+
+.search-input::placeholder {
+  color: rgb(0,101,176);
 }
 
 .search-label {
