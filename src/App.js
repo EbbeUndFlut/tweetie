@@ -18,7 +18,7 @@ import Footer from './components/Footer.js';
 import Logo from './components/Logo.js';
 import GetId from './components/GetId.js';
 import GuardedRoute from './components/GuardedRoute.js';
-
+import ConversationPage from './pages/ConversationPage.js'
 
 // Routing
 function App() {
@@ -33,6 +33,7 @@ function App() {
             <Route path="/home" element={<><Header title="Home" /><Home /><Footer /></>} />
             <Route path="/search" element={<><Header title="Suche" /><Search /><Footer /></>} />
             <Route path="/favorites" element={<><Header title="Favoriten" /><Favorites /><Footer /></>} />
+            <Route path="/conversationpage/:id" element={<><Header title="Les dich da mal durch." /><ConversationPage/><Footer /></>} />
             <Route path="/answers" element={<><Header title="Antworten" /><Answers /><Footer /></>} />
             <Route path="/answers/:id" element={<><Header title="Antworten" /><GetId /><Footer /></>} />
           </Route>
