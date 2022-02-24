@@ -26,7 +26,7 @@ const CommentDetails = (props) => {
                 <p>{props.comment}</p>
                 <div className="counterIcons">
                     <CommentCounter {...props} /> {/* ...props heißt alle props (spread operator) */}
-                    <LikeCounter />
+                    <LikeCounter {...props} />
                 </div>
             </div>
         </article>

@@ -36,7 +36,6 @@ const ConversationPage = (props) => {
     return (
         <section className="conversationPage">
             {/* Link zur Anzeige von allen Antworten zu einzelnen Posts */}
-            <Link className="comment-link" to={`/conversationpage/${post._id}`}>
                 <CommentDetails
                     img={creator.profilepic}
                     ccounter={post.comments}
@@ -45,10 +44,8 @@ const ConversationPage = (props) => {
                     thefunc={comment}
                     comment={post.text}
                     _id={post._id} />
-            </Link>
             <div className="commentConversationAnswer">
                 {answers.map((elt) => (
-                    <Link className="comment-link" to={`/conversationpage/${elt._id}`}>
                         <CommentDetails
                             key={uuidv4()}
                             img={elt.creator.profilepic}
@@ -59,7 +56,6 @@ const ConversationPage = (props) => {
                             comment={elt.text}
                             _id={elt._id}
                         />
-                    </Link>
                 )).sort((a, b) => (a.time > b.time ? 1 : -1))}
             </div>
             <BackButton />
