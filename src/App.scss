@@ -262,10 +262,15 @@ header {
 }
 
 // ===== Comment Style =====
-.commentItems {
+/* .commentItems {
   height: 550px; 
   overflow: auto;
   margin-bottom: 90px; 
+} */
+
+.commentItems {
+  height: calc(100vh - 205px); 
+  overflow: auto;
 }
 
 .comment {
