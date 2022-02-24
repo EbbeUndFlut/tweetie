@@ -28,7 +28,7 @@ const CommentItems = () => {
         <section className="commentItems">
             {posts
                 .map((elt) => (
-                    <Link to={`/conversationpage/${elt._id}`}>
+                    <Link className="comment-link" to={`/conversationpage/${elt._id}`}>
                         <CommentDetails
                             key={uuidv4()}
                             img={elt.creator.profilepic}

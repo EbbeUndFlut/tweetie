@@ -88,9 +88,7 @@ input, .loginButton, .backButton, .upload-label {
   color: grey; 
 }
 
-.uwu {
-  width: 75%;
-}
+
 
 // ===== Login & Registration Style =====
 /* @keyframes bounce {
@@ -291,6 +289,11 @@ header {
   }
 }
 
+.comment-link {
+  text-decoration: none;
+  color: black;
+}
+
 // Like and comment counter
 .counterIcons {
   display: flex;
@@ -307,15 +310,20 @@ header {
 } 
 
 // ===== Comment Answer Style =====
+
+.back-button-container {
+  padding: 0 30px;
+}
+
 .backButton {
   width: 100%;
-  margin: 10px auto; 
+  margin: 10px 0; 
   display: block;
-  transition: 0.1s all;
+/*   transition: 0.1s all;
   &:hover {
     transform: scale(0.90);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  }
+  } */
 }
 
 
