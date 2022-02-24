@@ -1,14 +1,20 @@
+import { v4 as uuidv4 } from "uuid"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CommentDetails from '../components/CommentDetails.js';
+
 
 const ConversationPage = (props) => {
 	const [post, setPost] = useState([]);
+	const comment = (item) => {
+		setPost(item)
+	}
 	const [answers, setAnswers] = useState([]);
 	let { id } = useParams();
 	useEffect(() => {
 		fetch(
 			process.env.REACT_APP_BACKEND_URL +
-				"/api/posts/conversation/",
+			"/api/posts/conversation/",
 			{
 				credentials: "include",
 				headers: {
@@ -26,10 +32,26 @@ const ConversationPage = (props) => {
 	}, []);
 	return (
 		<>
-			<h1>hajhsj</h1>
-			{answers.map((item) => (
-				<h1>Geilo</h1>
-			))}
+			<CommentDetails
+				key={uuidv4()}
+				img={post.creator.profilepic}
+				ccounter={post.comments}
+				username={post.creator.name}
+				time={post.date}
+				thefunc={comment}
+				comment={post.text}
+				_id={post._id}
+			/>
+			{answers.map((elt) => <CommentDetails
+				key={uuidv4()}
+				img={elt.creator.profilepic}
+				ccounter={elt.comments}
+				username={elt.creator.name}
+				time={elt.date}
+				thefunc={comment}
+				comment={elt.text}
+				_id={elt._id}
+			/>)}
 		</>
 	);
 };
