@@ -10,6 +10,7 @@ const ConversationPage = (props) => {
 		setPost(item)
 	}
 	const [answers, setAnswers] = useState([]);
+	const [creator, setCreator] = useState([])
 	let { id } = useParams();
 	useEffect(() => {
 		fetch(
@@ -28,11 +29,12 @@ const ConversationPage = (props) => {
 			.then((item) => {
 				setPost(item[0]);
 				setAnswers(item[0].comments);
+				setCreator(item[0].boy[0]);
 			});
 	}, []);
 	return (
 		<>
-			<CommentDetails
+		{/*			<CommentDetails
 				key={uuidv4()}
 				img={post.creator.profilepic}
 				ccounter={post.comments}
@@ -51,7 +53,7 @@ const ConversationPage = (props) => {
 				thefunc={comment}
 				comment={elt.text}
 				_id={elt._id}
-			/>)}
+			/>)}*/}
 		</>
 	);
 };
