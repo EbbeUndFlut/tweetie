@@ -52,6 +52,8 @@ const Registration = () => {
 		}
 	};
 
+	const [fileLabelText, setFileLabelText] = useState("Datei auswählen")
+
 	return (
 		<section className="start">
 			<h1>Erstelle dein Konto bei Tweetie</h1>
@@ -72,7 +74,7 @@ const Registration = () => {
 					type="email"
 					name="email"
 					id="email"
-					placeholder="E-Mmail"
+					placeholder="E-Mail"
 				/>
 				<input
 					onChange={(e) =>
@@ -92,9 +94,11 @@ const Registration = () => {
 					id="passwordConfirm"
 					placeholder="Passwort Bestätigung"
 				/>
-				<input
+				<label htmlFor="image" name="image" className="upload-label greyFont">{fileLabelText}</label>
+				<input className="upload-button"
 					onChange={(e) =>
-						setPic(e.target.files[0])
+						{setPic(e.target.files[0])
+						setFileLabelText("Ausgewählte Datei: " + e.target.files[0].name)}
 					}
 					type="file"
 					name="image"

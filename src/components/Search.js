@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
 
 const Search = (props) => {
@@ -14,16 +15,17 @@ const Search = (props) => {
     }
 
     return (
-        <>
-            <form className="search">
-                <input
+        <div className="search">
+            <form className="search-form">
+                <label htmlFor="search" className="search-label"><FaSearch className="FaIcon"/></label>
+                <input className="search-input"
                     onChange={(event) => handleSearch(event)}
                     type="text"
                     name="search"
                     id="search"
-                    placeholder="🔍 Wonach möchtest du suchen?" />
+                    placeholder="Wonach möchtest du suchen?" />
             </form>
-        </>
+        </div>
 
 
     );
