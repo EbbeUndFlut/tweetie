@@ -7,7 +7,7 @@ const LikeCounter = () => {
     const [count, setCount] = useState(0);
 
     return (
-        <Link onClick={() => setCount(count + 1)} to="#"><FaHeart /> <p className="counterP">{count}</p></Link>
+        <Link className="likeCounter" onClick={() => setCount(count + 1)} to="#"><FaHeart /> <p className="counterP">{count}</p></Link>
     );
 }
 

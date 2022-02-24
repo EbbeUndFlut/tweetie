@@ -11,7 +11,7 @@ const CommentCounter = (props) => {
 	}, []);
 
 	return (
-		<Link className="counterP" to={`/answers/${props._id}`}>
+		<Link className="commentCounter" to={`/answers/${props._id}`}>
 			<FaComment />
 			<p className="counterP">{count}</p>
 		</Link>
