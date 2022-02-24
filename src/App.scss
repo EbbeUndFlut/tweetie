@@ -1,5 +1,4 @@
 // ===== General Style =====
-
 // Imports
 @import "./scss/mixins.scss";
 
@@ -44,7 +43,7 @@ input, .loginButton, .backButton, .upload-label {
   text-decoration: none;
 }
 
-.loginButton, .backButton, .upload-label, .blueButton {
+.loginButton, .backButton, .upload-label, .blueButton, .cursor {
   cursor: pointer;
 }
 
@@ -106,30 +105,7 @@ input, .loginButton, .backButton, .upload-label {
 }
 
 // ===== Login & Registration Style =====
-@keyframes bounce {
-  0%   {top: -100px; left: -100;};
-  5%   {top: -90px; left: -95px;};
-  10%  {top: -80px; left: -90px;};
-  15%  {top: -70px; left: -85px;};
-  20%  {top: -60px; left: -80px;};;
-  25%  {top: -70px; left: -75px;};
-  30%  {top: -80px; left: -70px;};
-  35%  {top: -75px; left: -65px;};
-  40% {top: -70px; left: -60px;};
-  45% {top: -65px; left: -55px;};
-  50% {top: -60px; left: -50px;};
-  55% {top: -50px; left: -45px;};
-  60% {top: -40px; left: -40px;};
-  65% {top: -35px; left: -35px;};
-  70% {top: -30px; left: -30px;};
-  75% {top: -25px; left: -25px;};
-  80% {top: -20px; left: -20px;};
-  85% {top: -15px; left: -15px;};
-  90% {top: -10px; left: -10px;};
-  95% {top: -5px; left: -5px;};
-  100% {top: 0px; left: 0px;};
-}
-
+// Animation für Login/Registrierung (ungenutzt)
 @keyframes scale {
     0%   {transform: scale(0.97)};
     5%   {transform: scale(0.95)};
@@ -153,7 +129,7 @@ input, .loginButton, .backButton, .upload-label {
     95% {transform: scale(5)};
     100% {transform: scale(7)};
 }
-
+// Animation für Seitenaufruf
 @keyframes scale2 {
   0%   {transform: scale(7)};
   5%   {transform: scale(5)};
@@ -241,8 +217,6 @@ header {
   }
 }
 
-
-
 // ===== Search Style =====
 .search {
   padding: 0px 10px;
@@ -262,7 +236,7 @@ header {
 }
 
 .search-input{
-  background-color: rgb(255,255,255,0);
+  background-color: rgb(255,255,255);
   color: #000000;
   outline: none;
   border: none;
@@ -353,7 +327,6 @@ header {
   }
 }
 
-
 .back-button-container {
   padding: 0 30px;
 }
@@ -372,7 +345,6 @@ header {
     // border-left: 1px solid rgba(0,101,176,0.3);
   }
 }
-
 
 // ===== Footer Style =====
 footer {
