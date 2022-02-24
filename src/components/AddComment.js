@@ -19,6 +19,7 @@ const AddComment = (props) => {
 	return (
 		<form className="addComment">
 			<input
+		
 				onChange={(e) => setText(e.target.value)}
 				type="text"
 				name="comment"
