@@ -69,7 +69,7 @@ const Login = () => {
 
 	return (
 		<section className="start">
-			<h1>Melde dich bei Tweetie an</h1>
+			<h1>Melde dich bei Tweet<span className="fontColorOrange">i</span>e an</h1>
 			<form>
 				<input
 					onChange={(e) =>

@@ -23,7 +23,7 @@ const CommentDetails = (props) => {
         <article className="comment">
             <img src={props.img} alt={props.username} />
             <div className="commentContent">
-                <h2>{props.username}</h2>
+                <h3>{props.username}</h3>
                 <p className="greyFont">{time}</p>
                 <p>{props.comment}</p>
                 <div className="counterIcons">

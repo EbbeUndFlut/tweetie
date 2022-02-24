@@ -56,7 +56,7 @@ const Registration = () => {
 
 	return (
 		<section className="start">
-			<h1>Erstelle dein Konto bei Tweetie</h1>
+			<h1>Erstelle dein Konto bei Tweet<span className="fontColorOrange">i</span>e</h1>
 			<form>
 				<input
 					onChange={(e) =>
@@ -94,7 +94,7 @@ const Registration = () => {
 					id="passwordConfirm"
 					placeholder="Passwort Bestätigung"
 				/>
-				<label htmlFor="image" name="image" className="upload-label greyFont">{fileLabelText}</label>
+				<label htmlFor="image" name="image" className="upload-label">{fileLabelText}</label>
 				<input className="upload-button"
 					onChange={(e) =>
 						{setPic(e.target.files[0])

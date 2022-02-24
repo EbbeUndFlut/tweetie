@@ -24,7 +24,7 @@ const AddComment = (props) => {
 				type="text"
 				name="comment"
 				id="comment"
-				placeholder="Was möchtest mitteilen?"
+				placeholder="Was möchtest du mitteilen?"
 			/>
 			<input
 				onClick={create}

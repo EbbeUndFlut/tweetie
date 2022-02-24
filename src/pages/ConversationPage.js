@@ -31,18 +31,20 @@ const ConversationPage = (props) => {
     return (
         <section className="conversationPage">
             <CommentDetails img={creator.profilepic} ccounter={post.comments} username={creator.name} time={post.date} thefunc={comment} comment={post.text} _id={post._id} />
-            {answers.map((elt) => (
-                <CommentDetails
-                    key={uuidv4()}
-                    img={elt.creator.profilepic}
-                    ccounter={elt.comments}
-                    username={elt.creator.name}
-                    time={elt.date}
-                    thefunc={comment}
-                    comment={elt.text}
-                    _id={elt._id}
-                />
-            ))}
+            <div className="commentConversationAnswer">
+                {answers.map((elt) => (
+                    <CommentDetails
+                        key={uuidv4()}
+                        img={elt.creator.profilepic}
+                        ccounter={elt.comments}
+                        username={elt.creator.name}
+                        time={elt.date}
+                        thefunc={comment}
+                        comment={elt.text}
+                        _id={elt._id}
+                    />
+                ))}
+            </div>
             <BackButton />
         </section>
     )
