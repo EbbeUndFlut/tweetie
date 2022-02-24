@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CommentDetails from '../components/CommentDetails.js';
+import BackButton from '../components/BackButton.js';
 
 
 const ConversationPage = (props) => {
@@ -31,8 +32,8 @@ const ConversationPage = (props) => {
 			});
 	}, []);
 	return (
-		<>
-			<CommentDetails
+		<section className="conversationPage">
+			{/* <CommentDetails
 				key={uuidv4()}
 				img={post.creator.profilepic}
 				ccounter={post.comments}
@@ -41,7 +42,7 @@ const ConversationPage = (props) => {
 				thefunc={comment}
 				comment={post.text}
 				_id={post._id}
-			/>
+			/> */}
 			{answers.map((elt) => <CommentDetails
 				key={uuidv4()}
 				img={elt.creator.profilepic}
@@ -52,7 +53,8 @@ const ConversationPage = (props) => {
 				comment={elt.text}
 				_id={elt._id}
 			/>)}
-		</>
+			<BackButton/>
+		</section>
 	);
 };
 
