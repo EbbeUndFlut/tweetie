@@ -5,7 +5,8 @@ const AddComment = (props) => {
 	const inputRef = useRef(null)
 	const [text, setText] = useState("");
 	const create = (e) => {
-		e.preventDefault();
+		// Auskommentiert, um Reload der Seite bei neuem Kommentar zu starten
+		/* e.preventDefault(); */
 		const { parentid } = props;
 		console.log("PROPS:", parentid);
 		inputRef.current.value=""
