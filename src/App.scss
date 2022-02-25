@@ -299,12 +299,11 @@ header {
 // ===== Footer Style =====
 footer {
   position: fixed; 
-  left: 0; 
   bottom: 7px;
   font-size: 30px;
   div {
     @include flexSpaceBetween; 
-    padding: 0 50px; 
+    padding: 0 50px;   
     width: 414px;
     margin-left: auto;
     margin-right: auto;
