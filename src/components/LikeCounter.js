@@ -25,7 +25,7 @@ const LikeCounter = (props) => {
 
 	return (
 		<>
-			<div className="likeCounter counterIcons">
+			<div className="likeCounter">
 				<FaHeart onClick={changeFav} />
 				<p className="counterP">{count}</p>
 			</div>
