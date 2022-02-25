@@ -35,7 +35,7 @@ const ConversationPage = (props) => {
 
     return (
         <section className="conversationPage">
-            {/* Link zur Anzeige von allen Antworten zu einzelnen Posts */}
+            {/* Link zur Anzeige von allen Antworten zu einzelnen Posts  s */}
             {post ? (
                 <CommentDetails
                     img={post.creator.profilepic}
