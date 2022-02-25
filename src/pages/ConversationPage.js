@@ -7,7 +7,7 @@ import BackButton from "../components/BackButton.js"
 import CommentDetails from "../components/CommentDetails.js"
 
 const ConversationPage = (props) => {
-    const [post, setPost] = useState([])
+    const [post, setPost] = useState(null)
     const comment = (item) => {
         setPost(item)
     }
@@ -27,25 +27,29 @@ const ConversationPage = (props) => {
         })
             .then((data) => data.json())
             .then((item) => {
-                setPost(item[0])
-                setAnswers(item[0].comments)
-                setCreator(item[0].boy[0])
+                console.log("hierhier", item)
+                setPost(item.post)
+                setAnswers(item.comments)
             })
     }, [])
-    
+
     return (
         <section className="conversationPage">
             {/* Link zur Anzeige von allen Antworten zu einzelnen Posts */}
+            {post ? (
                 <CommentDetails
-                    img={creator.profilepic}
+                    img={post.creator.profilepic}
                     ccounter={post.comments}
-                    username={creator.name}
+                    username={post.creator.name}
                     time={post.date}
                     thefunc={comment}
                     comment={post.text}
-                    _id={post._id} />
+                    _id={post._id}
+                />
+            ) : null}
             <div className="commentConversationAnswer">
-                {answers.map((elt) => (
+                {answers
+                    .map((elt) => (
                         <CommentDetails
                             key={uuidv4()}
                             img={elt.creator.profilepic}
@@ -56,7 +60,9 @@ const ConversationPage = (props) => {
                             comment={elt.text}
                             _id={elt._id}
                         />
-                )).sort((a, b) => (a.time > b.time ? 1 : -1))}
+                    ))
+
+                    .sort((a, b) => (a.time > b.time ? 1 : -1))}
             </div>
             <BackButton />
         </section>
