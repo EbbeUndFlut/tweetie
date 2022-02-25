@@ -37,9 +37,8 @@ const Answers = (props) => {
 			<section className="postAnswers">
 				{posts.map((elt) => (
 					// Link zur Anzeige von allen Antworten zu einzelnen Posts
-					<Link className="comment-link" to={`/conversationpage/${elt._id}`}>
+					<Link className="comment-link" to={`/conversationpage/${elt._id}`} key={uuidv4()}>
 						<CommentDetails
-							key={uuidv4()}
 							img={elt.creator.profilepic}
 							username={elt.creator.name}
 							time={elt.date}

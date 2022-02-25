@@ -7,17 +7,19 @@ const AddComment = (props) => {
 	const create = (e) => {
 		// Auskommentiert, um Reload der Seite bei neuem Kommentar zu starten
 		/* e.preventDefault(); */
-		const { parentid } = props;
-		console.log("PROPS:", parentid);
-		inputRef.current.value=""
-		fetch(process.env.REACT_APP_BACKEND_URL + "/api/posts", {
-			method: "POST",
-			credentials: "include",
-			body: JSON.stringify({ text, parentPostId: parentid }),
-			headers: {
-				"Content-Type": "application/json",
-			},
-		}).then((res) => console.log(res));
+		if (text.length > 0) {
+			const { parentid } = props;
+			console.log("PROPS:", parentid);
+			inputRef.current.value = ""
+			fetch(process.env.REACT_APP_BACKEND_URL + "/api/posts", {
+				method: "POST",
+				credentials: "include",
+				body: JSON.stringify({ text, parentPostId: parentid }),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			}).then((res) => console.log(res));
+		}
 	};
 	return (
 		<form className="addComment">
