@@ -45,15 +45,16 @@ Users should be able to:
 - MongoDB
 - Mongoose
 - Dotenv.js
+- Heroku
 
 ### What we learned
 
-I worked on this project before but so far it was only frontend based with no connection to an online server or database. So until now it wasn't dynamic. Now I rebuild the project from a backend perspective and conncted the project with a database and made it possible to add new products to the shop. This happens by reading out a from on the addProduct page. 
+On this final project of our Supercode coding bootcamp the most important challenge was to work in a team. Beside the technical aspects of the project we had to organize our work force, split work and bring together what each team member achieved. We managed that with several short meetings during the day and always being available for little (or bigger) questions. 
 
-Display a random range of products on the addProduct page was another challenge and also how to highlight a hero image in the main page product overview. 
+While the design of the project was pretty simple, we still had some learnings how to buidl proper compoments and how to use them in several files. The fetches to get date from the backend were the most difficult part. 
 
-Another interesting part was to use Dotenv to hide all sensitive information. As always I very much enjoyed working with SCSS and in this case with partials from EJS. 
+Backend in general was more complex than we expected at the beginning because databases and collections had to be connected. Another topic we solved was login and registration via cookie token and to uploas profile pictures. 
 
 ### Continued development
 
-The next step will be to upload the project on Heroku. There are still ways to optimize the overall look of the page. E.g. I want to implement a mobile menu and simplify the SCSS code. Another point would be to optimize the functions in the index.js. 
+The next step would be to create profile pages, to able to make changes in profiles or even delete them. Another point we would like to add is the ability to upload GIFs as a comment. 
