@@ -5,7 +5,7 @@ import { FaHeart } from "react-icons/fa";
 const LikeCounter = (props) => {
 	const [count, setCount] = useState(0);
 	const [isFav, setFav] = useState(false);
-	useEffect(() => { }, []);
+	useEffect(() => {setCount(props.likes)}, []);
 
 	const changeFav = () => {
 		const stat = !isFav

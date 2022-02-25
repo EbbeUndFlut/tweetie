@@ -15,6 +15,8 @@
 
 ### The challenge
 
+This project was accomplished as a team effort of @christianmaker, @mz686 and @StefanSeliger. 
+
 Users should be able to:
 
 - Login or register

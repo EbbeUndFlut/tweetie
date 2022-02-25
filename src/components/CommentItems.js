@@ -1,6 +1,5 @@
 // Komponente für Fetch aller Kommentare
 import { v4 as uuidv4 } from "uuid"
-import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import CommentDetails from "./CommentDetails.js"
 
@@ -26,9 +25,8 @@ const CommentItems = () => {
         <section className="commentItems">
             {posts
                 .map((elt, key) => (
-                    // Link zur Anzeige von allen Antworten zu einzelnen Posts
-                    <Link key={uuidv4()} className="comment-link" to={`/conversationpage/${elt._id}`}>
                         <CommentDetails
+                            key={uuidv4()}
                             img={elt.creator.profilepic}
                             ccounter={elt.comments}
                             username={elt.creator.name}
@@ -36,8 +34,8 @@ const CommentItems = () => {
                             thefunc={comment}
                             comment={elt.text}
                             _id={elt._id}
+                            likes={elt.likes}
                         />
-                    </Link>
                 ))
                 .sort((a, b) => (a.time > b.time ? 1 : -1))}
         </section>
