@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 const CommentCounter = (props) => {
 	const [count, setCount] = useState(0);
 	useEffect(() => {
-		setCount(props.ccounter);
+		setCount(props.ccounter || 0);
 	}, []);
 
 	return (

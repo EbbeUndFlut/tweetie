@@ -1,14 +1,14 @@
-// Komponente für Kommentareingabe 
-import React, { useState } from "react";
+// Komponente für Kommentareingabe
+import React, { useState, useRef } from "react";
 
 const AddComment = (props) => {
-	const [val, setVal] = useState();
+	const inputRef = useRef(null)
 	const [text, setText] = useState("");
 	const create = (e) => {
 		e.preventDefault();
-		const { parentid } = props
-		console.log('PROPS:', parentid)
-
+		const { parentid } = props;
+		console.log("PROPS:", parentid);
+		inputRef.current.value=""
 		fetch(process.env.REACT_APP_BACKEND_URL + "/api/posts", {
 			method: "POST",
 			credentials: "include",
@@ -21,7 +21,7 @@ const AddComment = (props) => {
 	return (
 		<form className="addComment">
 			<input
-				value={val}
+				ref={inputRef}
 				className="inputComment"
 				onChange={(e) => setText(e.target.value)}
 				type="text"
@@ -31,7 +31,6 @@ const AddComment = (props) => {
 			/>
 			<input
 				onClick={create}
-				onClick={() => setVal(() => "")}
 				className="blueButton"
 				type="submit"
 				value="Senden"
